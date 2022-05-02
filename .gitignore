@@ -1,4 +1,2 @@
 node_modules
 .env
-
-MONGO_URI = mongodb+srv://wk1:S9832458e@cluster0.ftogu.mongodb.net/mernApp?retryWrites=true&w=majority
