@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: false}))
 
 // linking /api/goals to the goalRoutes file in routes folder
 app.use("/api/goals", require("./routes/goalRoutes"))
+app.use("/api/users", require("./routes/userRoutes"))
 
 // overrides the default error handler
 app.use(errorHandler)
