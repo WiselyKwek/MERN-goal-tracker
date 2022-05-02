@@ -11,9 +11,9 @@ const protect = asyncHandler(async(req, res, next) => {
         try{
             // Get token from header
             token = req.headers.authorization.split(' ')[1]
-            // verify token
+            // verify token will reveal the id of the payload, we set the token to be based off the id of the payload
             const decoded = jwt.verify(token, process.env.JWT_SECRET)
-            // get user from database using the token
+            // get user from database using the id decoded from the token
             req.user = await User.findById(decoded.id).select('-password')
 
             next()
