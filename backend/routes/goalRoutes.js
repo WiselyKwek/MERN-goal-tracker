@@ -3,27 +3,23 @@ const router = express.Router()
 
 
 // better practice to modularize the functions for each route in a separate folder
-const { getGoals } = require("../controllers/goalController")
+const { getGoals, setGoal, updateGoal, deleteGoal } = require("../controllers/goalController")
 
 
-router.get("/",getGoals)
 
-router.post("/", (req, res) => {
-    res.status(200).json({
-        "Message": "create goal"
-    })
-})
+// router.get("/",getGoals)
 
-router.put("/:id", (req, res) => {
-    res.status(200).json({
-        "Message": `update goal with id: ${req.params.id}`
-    })
-})
-router.delete("/:id", (req, res) => {
-    res.status(200).json({
-        "Message": `deleted goal with id: ${req.params.id}`
-    })
-})
+// router.post("/", setGoal)
+
+// router.put("/:id", updateGoal)
+
+// router.delete("/:id", deleteGoal)
+
+
+// If there are repeated routes with different methods, can use the router.route way
+router.route("/").get(getGoals).post(setGoal)
+
+router.route("/:id").put(updateGoal).delete(deleteGoal)
 
 
 
