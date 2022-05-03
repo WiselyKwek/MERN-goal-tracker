@@ -1,7 +1,6 @@
 {
   "name": "mern-goal-tracker",
   "version": "1.0.0",
-  "proxy": "http://locahost:8000",
   "description": "mern-goal-tracker-tutorial",
   "main": "index.js",
   "scripts": {
